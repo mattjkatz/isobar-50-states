@@ -1,31 +1,30 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 import { db } from "./firebase-config";
-import { collection, getDocs } from "firebase/firestore";
+import { uid } from "uid";
+import { set, ref } from "firebase/database";
+import { useState, useEffect } from "react";
+import { onValue } from "firebase/database";
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const usersCollectionRef = collection(db, "users");
-  console.log(collection, "collection");
+  const [states, setStates] = useState([]);
+  // Read
   useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(usersCollectionRef);
-      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      // console.log(data);
-    };
-
-    getUsers();
+    onValue(ref(db), (snapshot) => {
+      setStates([]);
+      const data = snapshot.val();
+      if (data !== null) {
+        Object.values(data).map((state) => {
+          setStates((oldArray) => [...oldArray, state]);
+        });
+      }
+    });
+    console.log(states);
   }, []);
   return (
     <div className="App">
-      {users.map((user) => {
-        return (
-          <div key={user.id}>
-            <h1>{user.name}</h1>
-            <h1>{user.age}</h1>
-          </div>
-        );
-      })}
+      {states.map((state) => (
+        <h1>{state}</h1>
+      ))}
     </div>
   );
 }
