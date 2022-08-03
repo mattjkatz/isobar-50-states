@@ -4,34 +4,32 @@ import firebase from "./firebase-config";
 import { getDatabase, ref, onValue } from "firebase/database";
 
 function App() {
-  const [allStates, setState] = useState(true);
+  const [allStates, setState] = useState([]);
   useEffect(() => {
-    console.log("allStates", allStates);
     const getUsers = async () => {
       const db = getDatabase();
       const states = ref(db, "statesInfo/states");
       onValue(states, (snapshot) => {
         const data = snapshot.val();
-        let allStates = [];
+        let stateList = [];
         data.forEach((state) => {
-          allStates.push(state["@attributes"]);
+          stateList.push(Object.entries(state["@attributes"]));
         });
-        console.log(allStates);
+        setState(stateList);
+        console.log(stateList, "This is the states array");
       });
     };
 
     getUsers();
-  }, [allStates]);
+  }, []);
 
   return allStates.length > 0 ? (
     <div className="App">
-      <h1>Hello</h1>
-      <p>{allStates}</p>
       {allStates.map((state) => {
         return (
-          <div key={state.abbreviation}>
-            <h1>{state.abbreviation}</h1>
-            <h1>{state.capital}</h1>
+          <div key={state[0][1]}>
+            <h1>{state[4][1]}</h1>
+            <h1>{state[1][1]}</h1>
           </div>
         );
       })}
