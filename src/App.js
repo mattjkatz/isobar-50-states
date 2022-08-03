@@ -1,6 +1,7 @@
 import "./App.css";
 import States from "./States";
 import Guess from "./Guess";
+import { Route, Routes } from "react-router-dom";
 // import Navbar from "./components/navbar";
 // import { db } from "./firebase-config";
 // import { ref } from "firebase/database";
@@ -10,8 +11,10 @@ import Guess from "./Guess";
 function App() {
   return (
     <div className="App">
-      <States />
-      <Guess />
+      <Routes>
+        <Route path="/states" element={<States />} />
+        <Route path="/guess" element={<Guess />} />
+      </Routes>
     </div>
   );
 }
