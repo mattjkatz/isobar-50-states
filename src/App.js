@@ -1,7 +1,6 @@
 import "./App.css";
 import { db } from "./firebase-config";
-import { uid } from "uid";
-import { set, ref } from "firebase/database";
+import { ref } from "firebase/database";
 import { useState, useEffect } from "react";
 import { onValue } from "firebase/database";
 
@@ -22,9 +21,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      {states.map((state) => (
-        <h1>{state}</h1>
-      ))}
+      <h1>Hello</h1>
     </div>
   );
 }
