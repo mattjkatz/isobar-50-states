@@ -6,6 +6,7 @@ import Card from "./../components/Card";
 import "./States.css";
 
 function States() {
+  // Retrieve data from the Realtime DB
   const [allStates, setState] = useState([]);
   useEffect(() => {
     const getUsers = async () => {
