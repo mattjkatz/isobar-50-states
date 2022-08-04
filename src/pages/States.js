@@ -27,9 +27,19 @@ function States() {
     <div className="States">
       {allStates.map((state) => {
         return (
-          <div key={state[0][1]}>
-            <h1>{state[4][1]}</h1>
-            <h1>{state[1][1]}</h1>
+          <div className="card text-center" key={state[0][1]}>
+            <div className="overflow">
+              <img
+                src={`https://www.50states.com/images/redesign/flags/${state[0][1].toLowerCase()}-largeflag.png`}
+                alt={state[0][1]}
+              ></img>
+            </div>
+            <div className="card-body text-dark">
+              <h4>{state[4][1]}</h4>
+              <a href="/" className="btn btn-outline-success">
+                Go Anywhere
+              </a>
+            </div>
           </div>
         );
       })}
