@@ -1,41 +1,18 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import firebase from "./firebase-config";
-import { getDatabase, ref, onValue } from "firebase/database";
+import React from "react";
+import States from "./pages/States";
+import Guess from "./pages/Guess";
+import Navbar from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [allStates, setState] = useState([]);
-  useEffect(() => {
-    const getUsers = async () => {
-      const db = getDatabase();
-      const states = ref(db, "statesInfo/states");
-      onValue(states, (snapshot) => {
-        const data = snapshot.val();
-        let stateList = [];
-        data.forEach((state) => {
-          stateList.push(Object.entries(state["@attributes"]));
-        });
-        setState(stateList);
-        console.log(stateList, "This is the states array");
-      });
-    };
-
-    getUsers();
-  }, []);
-
-  return allStates.length > 0 ? (
+  return (
     <div className="App">
-      {allStates.map((state) => {
-        return (
-          <div key={state[0][1]}>
-            <h1>{state[4][1]}</h1>
-            <h1>{state[1][1]}</h1>
-          </div>
-        );
-      })}
+      <Navbar />
+      <Routes>
+        <Route path="/states" element={<States />} />
+        <Route path="/guess" element={<Guess />} />
+      </Routes>
     </div>
-  ) : (
-    <div>Loading</div>
   );
 }
 

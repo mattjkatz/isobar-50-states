@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;600&family=Water+Brush&display=swap');
+
 .App {
+  font-family: 'Josefin Sans', sans-serif;
   text-align: center;
 }
 
