@@ -1,11 +1,11 @@
 import "./Modal.css";
 
-export const Modal = ({ showModal, setShowModal }) => {
-  return showModal ? (
+function Modal(props) {
+  return (
     <div className="background">
       <div className="modal-wrapper">Modal</div>
     </div>
-  ) : (
-    <div></div>
   );
-};
+}
+
+export default Modal;
