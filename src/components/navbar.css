@@ -75,13 +75,14 @@
 }
 
 .nav-title {
-  font-size: 2rem;
+  font-size: 3rem !important;
   font-family: 'Water Brush', cursive;
   color: #fff;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin: 0 auto 0;
+  padding-right: 60px;
 }
 
 span {

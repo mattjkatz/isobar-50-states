@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;600&family=Water+Brush&display=swap');
 
+.navbar {
+  z-index: 10;
+}
+
 .App {
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
+}
+
+body {
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.728), rgba(112, 150, 233, 0.615)),
+  url("./images/andrew-ling-oTC8Dj9lxVI-unsplash.jpg");
+  background-repeat: no-repeat, repeat;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .App-logo {

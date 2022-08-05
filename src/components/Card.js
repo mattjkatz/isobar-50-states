@@ -1,23 +1,61 @@
 import { useState } from "react";
 import "./Card.css";
 import Modal from "react-modal";
-// import Modal from "./Modal";
+
+Modal.setAppElement("#root");
 
 function Card(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
+  const none = "none";
   return (
     <div>
-      <Modal isOpen={modalIsOpen}>
-        <h2>{props.name}</h2>
-        <p>Body</p>
-        <button className="card-button" onClick={() => setModalIsOpen(false)}>
-          Close
-        </button>
+      <Modal
+        style={{
+          overlay: {
+            backgroundColor: "rgba(255, 255, 255, 0.5)",
+          },
+          content: {
+            color: "black",
+            height: 675,
+            width: 500,
+            margin: "auto",
+          },
+        }}
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+      >
+        <div className="modal-content">
+          <h2>{props.name}</h2>
+          <img src={props.url} alt="flag" className="modal-flag" />
+
+          <div className="rows">
+            <div className="info-type">
+              <h5 className="text-right">Abbreviation</h5>
+              <h5 className="text-right">Capital</h5>
+              <h5 className="text-right">Dst</h5>
+              <h5 className="text-right">Most Populous City</h5>
+              <h5 className="text-right">Population</h5>
+              <h5 className="text-right">Square Miles</h5>
+              <h5 className="text-right">Time Zone 1</h5>
+              <h5 className="text-right">Time Zone 2</h5>
+            </div>
+            <div className="info">
+              <h5 className="text-left">{props.abbreviation}</h5>
+              <h5 className="text-left">{props.capital}</h5>
+              <h5 className="text-left">{props.dst}</h5>
+              <h5 className="text-left">{props.most_populous_city}</h5>
+              <h5 className="text-left">{props.population}</h5>
+              <h5 className="text-left">{props.square_miles}</h5>
+              <h5 className="text-left">{props.time_zone1}</h5>
+              <h5 className="text-left">{props.time_zone2 || none}</h5>
+            </div>
+          </div>
+
+          <button className="card-button" onClick={() => setModalIsOpen(false)}>
+            Close
+          </button>
+        </div>
       </Modal>
-      {/* <div setOpenModal={setModalOpen ? 1 : 0} className="background">
-        <div className="modal-wrapper">Modal</div>
-      </div> */}
       <div className="card">
         <div className="card-body">
           <img src={props.url} alt="flag" className="card-image" />

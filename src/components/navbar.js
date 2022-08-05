@@ -19,7 +19,7 @@ function Navbar() {
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
           <div className="nav-title">
-            <h2>50 States</h2>
+            <h1>50 States</h1>
           </div>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>

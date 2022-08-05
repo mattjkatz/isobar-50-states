@@ -77,3 +77,43 @@
   vertical-align: middle;
   margin-top: 180px;
 }
+
+.modal-content {
+  align-content: center;
+  text-align: center;
+}
+
+.modal-test {
+  align-content: center;
+}
+
+.modal-flag {
+  width: 400px;
+  height: 250px;
+  margin: auto;
+}
+
+.rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info-type {
+  margin: auto;
+  margin-right: 5px !important;
+}
+
+.info {
+  margin: auto;
+  margin-left: 5px !important;
+  
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+  font-weight: 300;
+}

@@ -35,6 +35,14 @@ function States() {
               <Card
                 url={`https://www.50states.com/images/redesign/flags/${state.abbreviation.toLowerCase()}-largeflag.png`}
                 name={state.name}
+                abbreviation={state.abbreviation}
+                capital={state.capital}
+                dst={state.dst}
+                most_populous_city={state["most-populous-city"]}
+                population={state.population}
+                square_miles={state["square-miles"]}
+                time_zone1={state["time-zone-1"]}
+                time_zone2={state["time-zone-2"]}
               />
             </div>
           );
