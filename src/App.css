@@ -43,3 +43,7 @@
 .header {
   position: sticky;
 }
+
+.hidden {
+  display: none;
+}
