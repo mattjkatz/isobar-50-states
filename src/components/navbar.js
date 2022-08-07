@@ -7,13 +7,14 @@ import "./Navbar.css";
 import { IconContext } from "react-icons";
 
 function Navbar() {
+  // Change the state of the sidebar
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
+        {/* Header */}
         <div className="navbar">
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
@@ -29,6 +30,7 @@ function Navbar() {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
+            {/* Side bar page items */}
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>

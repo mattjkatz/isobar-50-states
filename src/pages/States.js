@@ -14,19 +14,19 @@ function States() {
       const states = ref(db, "statesInfo/states");
       onValue(states, (snapshot) => {
         const data = snapshot.val();
+        // Pull the attribute data out of each element in the array
         let stateList = [];
         data.forEach((state) => {
           stateList.push(state["@attributes"]);
         });
         setState(stateList);
-        console.log(stateList, "This is the states array");
       });
     };
-
     getUsers();
   }, []);
 
   return allStates.length > 0 ? (
+    // Grid of states
     <div className="States">
       <div className="wrapper">
         {allStates.map((state) => {
