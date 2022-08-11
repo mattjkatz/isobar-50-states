@@ -1,5 +1,19 @@
-
-
 .home {
   height: 1000px;
+  margin: auto;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 24rem));
+  gap: 2rem;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  max-width: 500px;
+  /* background-image: url("./../images/"); */
 }
