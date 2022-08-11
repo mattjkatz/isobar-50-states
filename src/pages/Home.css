@@ -9,6 +9,7 @@
   gap: 2rem;
   align-items: center;
   align-content: center;
+  text-align: center;
   margin: auto;
 }
 
@@ -16,4 +17,17 @@
   display: flex;
   max-width: 500px;
   /* background-image: url("./../images/"); */
+}
+
+.card-title {
+  text-decoration: none !important;
+}
+
+.card-body {
+  text-decoration: none !important;
+}
+
+h2 {
+  color: black;
+  text-decoration: none !important;
 }
