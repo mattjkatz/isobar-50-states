@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.756763eb.css",
+    "main.js": "/static/js/main.84c5f35e.js",
+    "static/js/787.e8c17901.chunk.js": "/static/js/787.e8c17901.chunk.js",
+    "static/media/andrew-ling-oTC8Dj9lxVI-unsplash.jpg": "/static/media/andrew-ling-oTC8Dj9lxVI-unsplash.01a3aca42ef5ee2171fb.jpg",
+    "index.html": "/index.html",
+    "main.756763eb.css.map": "/static/css/main.756763eb.css.map",
+    "main.84c5f35e.js.map": "/static/js/main.84c5f35e.js.map",
+    "787.e8c17901.chunk.js.map": "/static/js/787.e8c17901.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.756763eb.css",
+    "static/js/main.84c5f35e.js"
+  ]
+}
