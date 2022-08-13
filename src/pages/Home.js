@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="home">
       <h1>I am the Home page!</h1>
-      {/* <div className="card-grid">
+      <div className="card-grid">
         <a href="/states">
           <div className="card">
             <div className="card-body">
@@ -20,7 +20,7 @@ function Home() {
             </div>
           </div>
         </a>
-      </div> */}
+      </div>
     </div>
   );
 }
