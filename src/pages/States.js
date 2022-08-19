@@ -25,7 +25,7 @@ function States() {
     getUsers();
   }, []);
 
-  return allStates.length > 0 ? (
+  return (
     // Grid of states
     <div className="States">
       <div className="wrapper">
@@ -49,8 +49,6 @@ function States() {
         })}
       </div>
     </div>
-  ) : (
-    <div>Loading</div>
   );
 }
 
