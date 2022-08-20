@@ -5,7 +5,6 @@
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 24rem));
   gap: 2rem;
   align-items: center;
   align-content: center;
@@ -16,18 +15,11 @@
 .card {
   display: flex;
   max-width: 500px;
+  margin: auto;
   /* background-image: url("./../images/"); */
-}
-
-.card-title {
-  text-decoration: none !important;
-}
-
-.card-body {
-  text-decoration: none !important;
 }
 
 h2 {
   color: black;
-  text-decoration: none !important;
+  /* text-decoration: none !important; */
 }
